@@ -3,10 +3,403 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLBogotá RP</title>
+    <title>CL Bogotá RP | Servidor de Roleplay Colombiano</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Rajdhani, Inter, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>CLBogotá RP</h1>
+
+    <!-- MÓDULO 1. BARRA DE NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="logo">
+                <div class="logo-badge">CL</div>
+                <div class="logo-text">BOGOTÁ <span>RP</span></div>
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servidor">El Servidor</a>
+                <a href="#normativa">Normativa</a>
+                <a href="#facciones">Facciones</a>
+                <a href="#tienda">Tienda</a>
+                <a href="#comunidad">Comunidad</a>
+                <div class="nav-status-indicator">
+                    <span class="status-dot-green"></span>
+                    <span class="mono">EN LÍNEA</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MÓDULO 2. PORTADA PRINCIPAL O HERO -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="pulse-dot-red"></span> ROLEPLAY COLOMBIANO
+            </div>
+            <h1>TU HISTORIA. TU CIUDAD. <br><span class="highlight-title">TU LEYENDA.</span></h1>
+            <p class="hero-subtitle">Una ciudad, miles de historias. Construye tu camino, encuentra tu lugar y vive el roleplay a tu manera.</p>
+            
+            <div class="hero-buttons">
+                <a href="#empezar" class="btn-primary">CONECTAR AL SERVIDOR</a>
+                <a href="#comunidad" class="btn-secondary">UNIRME A DISCORD</a>
+            </div>
+
+            <div class="hero-status-bar">
+                <div class="status-item">
+                    <span class="status-dot-green"></span>
+                    <span class="mono">ESTADO: <strong class="text-white">EN LÍNEA</strong></span>
+                </div>
+                <div class="status-divider"></div>
+                <div class="status-item">
+                    <span class="mono">JUGADORES: <strong class="text-red">SIN DATOS / CONFIGURANDO</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 3. ESTADÍSTICAS EN TIEMPO REAL -->
+    <section class="stats-panel">
+        <div class="stats-container">
+            <div class="stat-card primary-stat">
+                <div class="stat-label">JUGADORES CONECTADOS</div>
+                <div class="stat-value mono">-- / --</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">SERVIDOR</div>
+                <div class="stat-value mono status-green-text">EN LÍNEA</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">LATENCIA</div>
+                <div class="stat-value mono">NO DISPONIBLE</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 4. SOBRE CL BOGOTÁ RP -->
+    <section id="servidor" class="about-section">
+        <div class="section-container">
+            <div class="section-header-centered">
+                <h2>MUCHO MÁS QUE UN SERVIDOR. <span class="text-red">UNA SEGUNDA VIDA.</span></h2>
+                <p>CLBogotá RP es un espacio para construir historias, desarrollar personajes y compartir experiencias dentro de una ciudad inspirada en la vida urbana colombiana. Cada decisión tiene consecuencias y cada jugador contribuye a construir la historia de la ciudad.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">⚖️</div>
+                    <h3>ROLEPLAY INMERSIVO</h3>
+                    <p>Historias, personajes y decisiones con sentido orientados a una vivencia profunda de interpretación urbana.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🤝</div>
+                    <h3>COMUNIDAD ACTIVA</h3>
+                    <p>Convivencia, colaboración y eventos coordinados para mantener una atmósfera dinámica y respetuosa.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🌆</div>
+                    <h3>MUNDO EN EVOLUCIÓN</h3>
+                    <p>Actividades, sistemas y experiencias técnicas diseñadas para crecer de la mano de nuestra comunidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 5. FACCIONES Y PROFESIONES -->
+    <section id="facciones" class="factions-section">
+        <div class="section-container">
+            <div class="section-header-centered">
+                <h2>FACCIONES Y <span class="text-red">PROFESIONES</span></h2>
+                <p>Elige tu camino en la capital. Desde el orden público hasta el sector privado y productivo.</p>
+            </div>
+
+            <div class="factions-grid">
+                <div class="faction-card">
+                    <div class="faction-img-wrapper police-bg"></div>
+                    <div class="faction-body">
+                        <h3>Policía Nacional</h3>
+                        <p>Mantén el orden, protege a los ciudadanos y haz cumplir la ley en las calles de Bogotá.</p>
+                        <a href="#contacto" class="btn-card">CONOCER MÁS</a>
+                    </div>
+                </div>
+
+                <div class="faction-card">
+                    <div class="faction-img-wrapper medic-bg"></div>
+                    <div class="faction-body">
+                        <h3>Servicios Médicos</h3>
+                        <p>Atención de emergencias sanitarias, rescates y soporte vital avanzado en toda la ciudad.</p>
+                        <a href="#contacto" class="btn-card">CONOCER MÁS</a>
+                    </div>
+                </div>
+
+                <div class="faction-card">
+                    <div class="faction-img-wrapper mechanic-bg"></div>
+                    <div class="faction-body">
+                        <h3>Mecánicos</h3>
+                        <p>Personalización, mantenimiento, reparaciones y asistencia vial para el parque automotor.</p>
+                        <a href="#contacto" class="btn-card">CONOCER MÁS</a>
+                    </div>
+                </div>
+
+                <div class="faction-card">
+                    <div class="faction-img-wrapper taxi-bg"></div>
+                    <div class="faction-body">
+                        <h3>Transporte y Taxis</h3>
+                        <p>Movilidad urbana eficiente conectando cada rincón de la metrópoli de forma segura.</p>
+                        <a href="#contacto" class="btn-card">CONOCER MÁS</a>
+                    </div>
+                </div>
+
+                <div class="faction-card">
+                    <div class="faction-img-wrapper business-bg"></div>
+                    <div class="faction-body">
+                        <h3>Empresarios</h3>
+                        <p>Lidera comercios, genera empleo y dinamiza la economía interna de la ciudad.</p>
+                        <a href="#contacto" class="btn-card">CONOCER MÁS</a>
+                    </div>
+                </div>
+
+                <div class="faction-card">
+                    <div class="faction-img-wrapper criminal-bg"></div>
+                    <div class="faction-body">
+                        <h3>Organizaciones Criminales</h3>
+                        <p>Estructuras clandestinas sujetas estrictamente a los límites normativos de roleplay.</p>
+                        <a href="#contacto" class="btn-card">CONOCER MÁS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 6. CÓMO EMPEZAR A JUGAR -->
+    <section id="empezar" class="getting-started">
+        <div class="section-container">
+            <div class="section-header-centered">
+                <h2>CÓMO <span class="text-red">EMPEZAR A JUGAR</span></h2>
+                <p>Sigue los pasos oficiales para unirte correctamente a CLBogotá RP.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number mono">01</div>
+                    <h3>PREPARA TU JUEGO</h3>
+                    <p>Asegúrate de contar con el juego actualizado.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number mono">02</div>
+                    <h3>ÚNETE A LA COMUNIDAD</h3>
+                    <p>Accede a nuestro servidor oficial de Discord para verificar tu cuenta y conocer los anuncios esenciales.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number mono">03</div>
+                    <h3>CONÉCTATE AL SERVIDOR</h3>
+                    <p>Usa el Codigo Oficial proporcionado por la administración para unirte al servidor.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number mono">04</div>
+                    <h3>CREA TU HISTORIA</h3>
+                    <p>Lee la normativa con atención y comienza a interpretar tu rol con respeto.</p>
+                </div>
+            </div>
+
+            <div class="cta-centered">
+                <a href="#comunidad" class="btn-primary-large">QUIERO ENTRAR A LA CIUDAD</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 7. NORMATIVA DEL SERVIDOR -->
+    <section id="normativa" class="rules-section">
+        <div class="section-container">
+            <div class="section-header-centered">
+                <h2>NORMATIVA <span class="text-red">DEL SERVIDOR</span></h2>
+                <p>La convivencia y el respeto mutuo son la base de nuestra comunidad.</p>
+            </div>
+
+            <div class="rules-accordion-list">
+                <details class="rule-dropdown">
+                    <summary>Normas generales</summary>
+                    <div class="rule-content">
+                        <p>Principios de respeto ciudadano, prohibición absoluta de conductas tóxicas, acoso o actitudes perjudiciales para la convivencia general de los usuarios.</p>
+                    </div>
+                </details>
+                <details class="rule-dropdown">
+                    <summary>Reglas de roleplay</summary>
+                    <div class="rule-content">
+                        <p>Directrices obligatorias sobre Valor de Vida, Metagaming, Powergaming, IC y OCC para garantizar interpretaciones coherentes.</p>
+                    </div>
+                </details>
+                <details class="rule-dropdown">
+                    <summary>Conducta y convivencia</summary>
+                    <div class="rule-content">
+                        <p>Lineamientos para el uso de canales de voz y texto dentro y fuera del juego, manteniendo la integridad de los espacios comunes.</p>
+                    </div>
+                </details>
+                <details class="rule-dropdown">
+                    <summary>Uso de exploits y trampas</summary>
+                    <div class="rule-content">
+                        <p>Tolerancia cero ante el aprovechamiento de errores de programación, bugs, programas de terceros o modificaciones ilegales.</p>
+                    </div>
+                </details>
+                <details class="rule-dropdown">
+                    <summary>Sanciones</summary>
+                    <div class="rule-content">
+                        <p>Escala de amonestaciones, exclusiones temporales y bloqueos permanentes aplicados por el equipo de moderación según la gravedad de la falta.</p>
+                    </div>
+                </details>
+                <details class="rule-dropdown">
+                    <summary>Procedimientos administrativos</summary>
+                    <div class="rule-content">
+                        <p>Canales oficiales y formatos establecidos para apelaciones, reportes de incidencias y aclaraciones con el staff.</p>
+                    </div>
+                </details>
+            </div>
+            <div class="rules-notice">
+                <p><em>Nota: La normativa oficial detallada y vinculante es la publicada y actualizada directamente por la administración de CLBogotá RP en sus canales oficiales.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 8. TIENDA Y BENEFICIOS -->
+    <section id="tienda" class="shop-section">
+        <div class="section-container">
+            <div class="section-header-centered">
+                <h2>TIENDA Y <span class="text-red">BENEFICIOS</span></h2>
+                <p>Apoya el mantenimiento del servidor obteniendo ventajas estéticas o de soporte autorizadas.</p>
+            </div>
+
+            <div class="shop-notice-box">
+                <div class="badge-pill-orange mono">PRÓXIMA APERTURA</div>
+                <h3>Módulo de Tienda en Preparación</h3>
+                <p>Las opciones de colaboración y beneficios digitales se habilitarán próximamente bajo pasarelas de pago oficiales y seguras avaladas por la administración.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 9. COMUNIDAD Y DISCORD -->
+    <section id="comunidad" class="community-section">
+        <div class="section-container community-box">
+            <div class="community-content">
+                <h2>LA CIUDAD TE <span class="text-red">ESTÁ ESPERANDO</span></h2>
+                <p>Forma parte de nuestra comunidad oficial. Conéctate con otros jugadores, recibe soporte directo y entérate de todas las novedades del servidor.</p>
+                <div class="community-actions">
+                    <a href="https://discord.gg/NT34rSE5e6" target="_blank" rel="noopener noreferrer" class="btn-primary">ACCEDER A LA CIUDAD</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 10. NOVEDADES Y EVENTOS -->
+    <section class="news-section">
+        <div class="section-container">
+            <div class="section-header-centered">
+                <h2>NOVEDADES Y <span class="text-red">EVENTOS</span></h2>
+                <p>Entérate de las últimas actualizaciones y acontecimientos de la ciudad.</p>
+            </div>
+
+            <div class="empty-news-state">
+                <div class="empty-icon">📁</div>
+                <h3>No hay publicaciones recientes</h3>
+                <p>Próximamente encontrarás aquí los comunicados oficiales, notas de parches y eventos programados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 11. PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+        <div class="section-container">
+            <div class="section-header-centered">
+                <h2>PREGUNTAS <span class="text-red">FRECUENTES</span></h2>
+                <p>Resolvemos las dudas habituales sobre el acceso y funcionamiento de CL Bogotá RP.</p>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>¿Cómo puedo entrar al servidor?</summary>
+                    <div class="faq-answer">
+                        <p>Debes cumplir con los requisitos previos, unirte a nuestro Discord oficial para verificación y utilizar los canales autorizados de conexión.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué necesito para jugar?</summary>
+                    <div class="faq-answer">
+                        <p>Contar con una copia legítima del juego base compatible, una conexión a internet estable y la plataforma de cliente recomendada por el staff.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Dónde encuentro las reglas?</summary>
+                    <div class="faq-answer">
+                        <p>Puedes revisarlas directamente en la sección de Normativa de esta página web o en el canal de reglamentos dentro de nuestro Discord.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cómo puedo reportar un problema?</summary>
+                    <div class="faq-answer">
+                        <p>Los reportes de incidencias técnicas o de comportamiento deben realizarse mediante los tickets de soporte habilitados en Discord.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cómo puedo solicitar ingreso a una facción?</summary>
+                    <div class="faq-answer">
+                        <p>Las postulaciones oficiales para cuerpos de seguridad, servicios médicos o talleres se abren periódicamente mediante convocatorias públicas.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Dónde recibo soporte?</summary>
+                    <div class="faq-answer">
+                        <p>El equipo administrativo atiende consultas técnicas y generales a través del sistema de soporte en nuestra comunidad de Discord.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO 12. PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="#inicio" class="logo footer-logo">
+                    <div class="logo-badge">CL</div>
+                    <div class="logo-text">BOGOTÁ <span>RP</span></div>
+                </a>
+                <p class="footer-desc">Plataforma oficial del servidor de roleplay ambientado en Bogotá, Colombia. Un espacio independiente de simulación y entretenimiento virtual.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#servidor">El Servidor</a>
+                <a href="#normativa">Normativa</a>
+                <a href="#facciones">Facciones</a>
+            </div>
+            <div class="footer-col">
+                <h4>Soporte y Comunidad</h4>
+                <a href="#comunidad">Discord Oficial</a>
+                <a href="#tienda">Tienda y Estado</a>
+                <a href="#empezar">Guía de Inicio</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Aviso de Privacidad</a>
+                <a href="#normativa">Términos y Condiciones</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2026</span> CL Bogotá RP. Todos los derechos reservados. Proyecto independiente de simulación de roleplay sin vinculación directa con marcas de terceros citadas con fines estrictamente descriptivos.</p>
+        </div>
+    </footer>
+
+    <!-- Script en línea mínimo solo para actualizar automáticamente el año del footer si se desea, o puramente estático -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
