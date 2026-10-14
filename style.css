@@ -1,0 +1,952 @@
+/* --- VARIABLES Y PALETA DE COLORES --- */
+:root {
+--bg-main: #090B10;
+--bg-secondary: #10141C;
+--card-bg: #171C26;
+--red-primary: #E53945;
+--red-hover: #FF4B55;
+--text-primary: #F5F7FA;
+--text-secondary: #A3ACBA;
+--green-connect: #35D07F;
+--border-color: #2A303C;
+
+--font-heading: 'Rajdhani', sans-serif;
+--font-body: 'Inter', sans-serif;
+--font-mono: 'JetBrains Mono', monospace;
+}
+
+
+/* Configuración general de la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Desplazamiento suave entre secciones */
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+background-color: var(--bg-main);
+color: var(--text-primary);
+font-family: var(--font-body);
+font-weight: 400;
+line-height: 1.6;
+overflow-x: hidden;
+}
+
+.mono {
+font-family: var(--font-mono);
+}
+
+.text-red {
+color: var(--red-primary);
+}
+
+.text-white {
+color: var(--text-primary);
+}
+
+/* --- UTILIDADES DE SECCIÓN --- */
+.section-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 2rem;
+}
+
+.section-header-centered {
+text-align: center;
+max-width: 700px;
+margin: 0 auto 4rem auto;
+}
+
+.section-header-centered h2 {
+font-family: var(--font-heading);
+font-size: 2.8rem;
+font-weight: 700;
+letter-spacing: 0.5px;
+margin-bottom: 1rem;
+color: var(--text-primary);
+text-transform: uppercase;
+}
+
+.section-header-centered p {
+color: var(--text-secondary);
+font-size: 1.05rem;
+}
+
+/* --- MÓDULO 1. BARRA DE NAVEGACIÓN --- */
+.navbar {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+background: rgba(9, 11, 16, 0.85);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid var(--border-color);
+z-index: 1000;
+}
+
+.nav-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 1rem 2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 0.75rem;
+text-decoration: none;
+}
+
+.logo-badge {
+background-color: var(--red-primary);
+color: white;
+font-family: var(--font-heading);
+font-weight: 700;
+font-size: 1.2rem;
+padding: 0.2rem 0.6rem;
+border-radius: 6px;
+letter-spacing: 1px;
+}
+
+.logo-text {
+font-family: var(--font-heading);
+font-size: 1.3rem;
+font-weight: 700;
+color: var(--text-primary);
+letter-spacing: 1px;
+}
+
+.logo-text span {
+color: var(--red-primary);
+}
+
+.nav-links {
+display: flex;
+gap: 2rem;
+align-items: center;
+}
+
+.nav-links a {
+text-decoration: none;
+color: var(--text-secondary);
+font-weight: 500;
+font-size: 0.95rem;
+transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+color: var(--text-primary);
+}
+
+.nav-status-indicator {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+background: rgba(53, 208, 127, 0.1);
+border: 1px solid rgba(53, 208, 127, 0.3);
+padding: 0.3rem 0.8rem;
+border-radius: 20px;
+font-size: 0.8rem;
+color: var(--green-connect);
+}
+
+.status-dot-green {
+width: 8px;
+height: 8px;
+background-color: var(--green-connect);
+border-radius: 50%;
+box-shadow: 0 0 8px var(--green-connect);
+}
+
+.menu-toggle, .hamburger {
+display: none;
+}
+
+/* --- MÓDULO 2. PORTADA PRINCIPAL O HERO --- */
+.hero {
+position: relative;
+height: 85vh;
+min-height: 600px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(135deg, #090B10 0%, #10141C 100%);
+background-size: cover;
+background-position: center;
+padding-top: 5rem;
+overflow: hidden;
+border-bottom: 1px solid var(--border-color);
+}
+
+.hero-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle at center, rgba(9, 11, 16, 0.4) 0%, rgba(9, 11, 16, 0.9) 100%);
+z-index: 1;
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+text-align: center;
+max-width: 900px;
+padding: 0 2rem;
+}
+
+.hero-tag {
+display: inline-flex;
+align-items: center;
+gap: 0.6rem;
+background: rgba(229, 57, 69, 0.1);
+border: 1px solid rgba(229, 57, 69, 0.3);
+padding: 0.4rem 1.2rem;
+border-radius: 30px;
+font-family: var(--font-mono);
+font-size: 0.85rem;
+color: var(--red-primary);
+margin-bottom: 1.5rem;
+font-weight: 500;
+}
+
+.pulse-dot-red {
+width: 8px;
+height: 8px;
+background-color: var(--red-primary);
+border-radius: 50%;
+animation: pulseRed 2s infinite;
+}
+
+@keyframes pulseRed {
+0% { box-shadow: 0 0 0 0 rgba(229, 57, 69, 0.7); }
+70% { box-shadow: 0 0 0 10px rgba(229, 57, 69, 0); }
+100% { box-shadow: 0 0 0 0 rgba(229, 57, 69, 0); }
+}
+
+.hero-content h1 {
+font-family: var(--font-heading);
+font-size: 3.8rem;
+font-weight: 700;
+line-height: 1.1;
+margin-bottom: 1.2rem;
+letter-spacing: -0.5px;
+}
+
+.highlight-title {
+color: var(--red-primary);
+}
+
+.hero-subtitle {
+color: var(--text-secondary);
+font-size: 1.15rem;
+max-width: 650px;
+margin: 0 auto 2.5rem auto;
+}
+
+.hero-buttons {
+display: flex;
+gap: 1rem;
+justify-content: center;
+margin-bottom: 2.5rem;
+}
+
+.btn-primary, .btn-secondary {
+padding: 0.9rem 2rem;
+border-radius: 8px;
+font-weight: 600;
+text-decoration: none;
+transition: all 0.3s ease;
+font-family: var(--font-heading);
+font-size: 1.05rem;
+letter-spacing: 0.5px;
+}
+
+.btn-primary {
+background-color: var(--red-primary);
+color: white;
+box-shadow: 0 4px 15px rgba(229, 57, 69, 0.3);
+}
+
+.btn-primary:hover {
+background-color: var(--red-hover);
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(229, 57, 69, 0.5);
+}
+
+.btn-secondary {
+background-color: var(--card-bg);
+border: 1px solid var(--border-color);
+color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+background-color: #1f2635;
+border-color: var(--text-secondary);
+transform: translateY(-2px);
+}
+
+.hero-status-bar {
+display: inline-flex;
+align-items: center;
+gap: 1.5rem;
+background: rgba(23, 28, 38, 0.8);
+border: 1px solid var(--border-color);
+padding: 0.8rem 1.5rem;
+border-radius: 12px;
+font-size: 0.9rem;
+}
+
+.status-item {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
+
+.status-divider {
+width: 1px;
+height: 16px;
+background-color: var(--border-color);
+}
+
+/* --- MÓDULO 3. ESTADÍSTICAS EN TIEMPO REAL --- */
+.stats-panel {
+background-color: var(--bg-secondary);
+border-bottom: 1px solid var(--border-color);
+padding: 2rem 0;
+}
+
+.stats-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 2rem;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1.5rem;
+}
+
+.stat-card {
+background-color: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 12px;
+padding: 1.5rem;
+text-align: center;
+transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+transform: translateY(-3px);
+border-color: rgba(229, 57, 69, 0.4);
+}
+
+.primary-stat {
+border-color: rgba(229, 57, 69, 0.5);
+}
+
+.stat-label {
+font-size: 0.8rem;
+color: var(--text-secondary);
+font-weight: 600;
+margin-bottom: 0.5rem;
+letter-spacing: 0.5px;
+}
+
+.stat-value {
+font-size: 1.5rem;
+font-weight: 700;
+color: var(--text-primary);
+}
+
+.status-green-text {
+color: var(--green-connect);
+}
+
+/* --- MÓDULO 4. SOBRE CL BOGOTÁ RP --- */
+.about-section {
+padding: 6rem 0;
+background-color: var(--bg-main);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+}
+
+.about-card {
+background-color: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 16px;
+padding: 2.5rem 2rem;
+transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.about-card:hover {
+transform: translateY(-5px);
+border-color: var(--red-primary);
+}
+
+.about-icon {
+font-size: 2.5rem;
+margin-bottom: 1.2rem;
+}
+
+.about-card h3 {
+font-family: var(--font-heading);
+font-size: 1.4rem;
+font-weight: 700;
+margin-bottom: 0.8rem;
+letter-spacing: 0.5px;
+}
+
+.about-card p {
+color: var(--text-secondary);
+font-size: 0.95rem;
+}
+
+/* --- MÓDULO 5. FACCIONES Y PROFESIONES --- */
+.factions-section {
+padding: 6rem 0;
+background-color: var(--bg-secondary);
+border-top: 1px solid var(--border-color);
+border-bottom: 1px solid var(--border-color);
+}
+
+.factions-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+}
+
+.faction-card {
+background-color: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 16px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.faction-card:hover {
+transform: translateY(-5px);
+border-color: var(--red-primary);
+}
+
+.faction-img-wrapper {
+height: 160px;
+background-size: cover;
+background-position: center;
+background-color: #212836;
+}
+
+/* Fondos ilustrativos de cabecera para facciones */
+.police-bg { background: linear-gradient(135deg, #1b263b, #0d1b2a); }
+.medic-bg { background: linear-gradient(135deg, #2b090e, #4a151f); }
+.mechanic-bg { background: linear-gradient(135deg, #33270a, #57440f); }
+.taxi-bg { background: linear-gradient(135deg, #2d1d0c, #4a300d); }
+.business-bg { background: linear-gradient(135deg, #0d233a, #1b3a57); }
+.criminal-bg { background: linear-gradient(135deg, #2b0c2a, #4a1347); }
+
+.faction-body {
+padding: 2rem;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+}
+
+.faction-body h3 {
+font-family: var(--font-heading);
+font-size: 1.35rem;
+font-weight: 700;
+margin-bottom: 0.6rem;
+letter-spacing: 0.5px;
+}
+
+.faction-body p {
+color: var(--text-secondary);
+font-size: 0.9rem;
+margin-bottom: 1.5rem;
+flex-grow: 1;
+}
+
+.btn-card {
+display: inline-block;
+background: transparent;
+border: 1px solid var(--border-color);
+color: var(--text-primary);
+padding: 0.6rem 1.2rem;
+border-radius: 6px;
+font-family: var(--font-heading);
+font-weight: 600;
+font-size: 0.9rem;
+text-decoration: none;
+text-align: center;
+transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+background-color: var(--red-primary);
+border-color: var(--red-primary);
+}
+
+/* --- MÓDULO 6. CÓMO EMPEZAR A JUGAR --- */
+.getting-started {
+padding: 6rem 0;
+background-color: var(--bg-main);
+}
+
+.steps-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1.5rem;
+margin-bottom: 3rem;
+}
+
+.step-card {
+background-color: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 14px;
+padding: 2rem 1.5rem;
+position: relative;
+}
+
+.step-number {
+font-size: 2rem;
+font-weight: 700;
+color: var(--red-primary);
+margin-bottom: 1rem;
+opacity: 0.8;
+}
+
+.step-card h3 {
+font-family: var(--font-heading);
+font-size: 1.2rem;
+font-weight: 700;
+margin-bottom: 0.6rem;
+letter-spacing: 0.5px;
+}
+
+.step-card p {
+color: var(--text-secondary);
+font-size: 0.9rem;
+}
+
+.cta-centered {
+text-align: center;
+}
+
+.btn-primary-large {
+display: inline-block;
+background-color: var(--red-primary);
+color: white;
+padding: 1rem 2.5rem;
+border-radius: 8px;
+font-family: var(--font-heading);
+font-size: 1.15rem;
+font-weight: 700;
+text-decoration: none;
+letter-spacing: 1px;
+box-shadow: 0 4px 20px rgba(229, 57, 69, 0.4);
+transition: all 0.3s ease;
+}
+
+.btn-primary-large:hover {
+background-color: var(--red-hover);
+transform: translateY(-2px);
+box-shadow: 0 6px 25px rgba(229, 57, 69, 0.6);
+}
+
+/* --- MÓDULO 7. NORMATIVA DEL SERVIDOR --- */
+.rules-section {
+padding: 6rem 0;
+background-color: var(--bg-secondary);
+border-top: 1px solid var(--border-color);
+border-bottom: 1px solid var(--border-color);
+}
+
+.rules-accordion-list {
+max-width: 800px;
+margin: 0 auto 2rem auto;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.rule-dropdown {
+background-color: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 10px;
+overflow: hidden;
+transition: border-color 0.3s ease;
+}
+
+.rule-dropdown[open] {
+border-color: var(--red-primary);
+}
+
+.rule-dropdown summary {
+font-family: var(--font-heading);
+font-size: 1.2rem;
+font-weight: 600;
+padding: 1.2rem 1.5rem;
+cursor: pointer;
+outline: none;
+user-select: none;
+list-style: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.rule-dropdown summary::-webkit-details-marker {
+display: none;
+}
+
+.rule-dropdown summary::after {
+content: '+';
+font-family: var(--font-mono);
+font-size: 1.4rem;
+color: var(--red-primary);
+}
+
+.rule-dropdown[open] summary::after {
+content: '-';
+}
+
+.rule-content {
+padding: 0 1.5rem 1.5rem 1.5rem;
+color: var(--text-secondary);
+font-size: 0.95rem;
+border-top: 1px solid var(--border-color);
+}
+
+.rule-content p {
+padding-top: 1rem;
+}
+
+.rules-notice {
+text-align: center;
+max-width: 700px;
+margin: 0 auto;
+color: var(--text-secondary);
+font-size: 0.85rem;
+}
+
+/* --- MÓDULO 8. TIENDA Y BENEFICIOS --- */
+.shop-section {
+padding: 6rem 0;
+background-color: var(--bg-main);
+}
+
+.shop-notice-box {
+max-width: 600px;
+margin: 0 auto;
+background-color: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 16px;
+padding: 3rem 2rem;
+text-align: center;
+}
+
+.badge-pill-orange {
+display: inline-block;
+background: rgba(245, 158, 11, 0.1);
+border: 1px solid rgba(245, 158, 11, 0.3);
+color: #f59e0b;
+padding: 0.3rem 1rem;
+border-radius: 20px;
+font-size: 0.8rem;
+margin-bottom: 1rem;
+}
+
+.shop-notice-box h3 {
+font-family: var(--font-heading);
+font-size: 1.5rem;
+font-weight: 700;
+margin-bottom: 0.8rem;
+}
+
+.shop-notice-box p {
+color: var(--text-secondary);
+font-size: 0.95rem;
+}
+
+/* --- MÓDULO 9. COMUNIDAD Y DISCORD --- */
+.community-section {
+padding: 6rem 0;
+background-color: var(--bg-secondary);
+border-top: 1px solid var(--border-color);
+border-bottom: 1px solid var(--border-color);
+}
+
+.community-box {
+background: linear-gradient(135deg, #171C26 0%, #1f2838 100%);
+border: 1px solid rgba(229, 57, 69, 0.3);
+border-radius: 20px;
+padding: 4rem 2rem;
+text-align: center;
+}
+
+.community-content h2 {
+font-family: var(--font-heading);
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: 1rem;
+}
+
+.community-content p {
+color: var(--text-secondary);
+font-size: 1.05rem;
+max-width: 600px;
+margin: 0 auto 2rem auto;
+}
+
+.community-actions {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1rem;
+}
+
+.config-pending-text {
+font-size: 0.8rem;
+color: var(--text-secondary);
+}
+
+/* --- MÓDULO 10. NOVEDADES Y EVENTOS --- */
+.news-section {
+padding: 6rem 0;
+background-color: var(--bg-main);
+}
+
+.empty-news-state {
+max-width: 500px;
+margin: 0 auto;
+background-color: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 16px;
+padding: 3rem 2rem;
+text-align: center;
+}
+
+.empty-icon {
+font-size: 2.5rem;
+margin-bottom: 1rem;
+}
+
+.empty-news-state h3 {
+font-family: var(--font-heading);
+font-size: 1.3rem;
+font-weight: 700;
+margin-bottom: 0.5rem;
+}
+
+.empty-news-state p {
+color: var(--text-secondary);
+font-size: 0.9rem;
+}
+
+/* --- MÓDULO 11. PREGUNTAS FRECUENTES --- */
+.faq-section {
+padding: 6rem 0;
+background-color: var(--bg-secondary);
+border-top: 1px solid var(--border-color);
+}
+
+.faq-list {
+max-width: 800px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.faq-item {
+background-color: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 10px;
+overflow: hidden;
+transition: border-color 0.3s ease;
+}
+
+.faq-item[open] {
+border-color: var(--red-primary);
+}
+
+.faq-item summary {
+font-family: var(--font-heading);
+font-size: 1.15rem;
+font-weight: 600;
+padding: 1.2rem 1.5rem;
+cursor: pointer;
+outline: none;
+user-select: none;
+list-style: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.faq-item summary::-webkit-details-marker {
+display: none;
+}
+
+.faq-item summary::after {
+content: '+';
+font-family: var(--font-mono);
+font-size: 1.4rem;
+color: var(--red-primary);
+}
+
+.faq-item[open] summary::after {
+content: '-';
+}
+
+.faq-answer {
+padding: 0 1.5rem 1.5rem 1.5rem;
+color: var(--text-secondary);
+font-size: 0.95rem;
+border-top: 1px solid var(--border-color);
+}
+
+.faq-answer p {
+padding-top: 1rem;
+}
+
+/* --- MÓDULO 12. PIE DE PÁGINA --- */
+.footer {
+background-color: #05070a;
+border-top: 1px solid var(--border-color);
+padding: 4rem 2rem 2rem 2rem;
+}
+
+.footer-container {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr;
+gap: 3rem;
+margin-bottom: 3rem;
+}
+
+.footer-logo {
+margin-bottom: 1rem;
+}
+
+.footer-desc {
+color: var(--text-secondary);
+font-size: 0.9rem;
+line-height: 1.5;
+}
+
+.footer-col h4 {
+font-family: var(--font-heading);
+font-size: 1.1rem;
+font-weight: 700;
+margin-bottom: 1.2rem;
+letter-spacing: 0.5px;
+}
+
+.footer-col {
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+}
+
+.footer-col a {
+color: var(--text-secondary);
+text-decoration: none;
+font-size: 0.9rem;
+transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+color: var(--text-primary);
+}
+
+.footer-bottom {
+max-width: 1200px;
+margin: 0 auto;
+border-top: 1px solid var(--border-color);
+padding-top: 1.5rem;
+text-align: center;
+color: var(--text-secondary);
+font-size: 0.8rem;
+}
+
+/* --- DISEÑO RESPONSIVE --- */
+@media (max-width: 1024px) {
+.stats-container {
+grid-template-columns: repeat(2, 1fr);
+}
+.about-grid, .factions-grid, .steps-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+.footer-container {
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+}
+}
+
+@media (max-width: 768px) {
+.nav-links {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background-color: var(--bg-secondary);
+flex-direction: column;
+padding: 2rem;
+border-bottom: 1px solid var(--border-color);
+gap: 1.5rem;
+text-align: center;
+}
+
+.menu-toggle:checked ~ .nav-links {
+    display: flex;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: 0.3s;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+}
+
+.stats-container, .about-grid, .factions-grid, .steps-grid {
+    grid-template-columns: 1fr;
+}
+
+.footer-container {
+    grid-template-columns: 1fr;
+}
+
+.hero-buttons {
+    flex-direction: column;
+}
+
+
+}
